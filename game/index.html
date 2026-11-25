@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sizzle &amp; Serve — a 3-minute kitchen rush</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #2b2118;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  #wrap { width: min(1280px, 100vw); }
+  canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #e8d5a8;
+    cursor: pointer;
+  }
+  #below {
+    color: #f4ead5;
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 16px 18px;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+  #below b { color: #f2b705; }
+</style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="game" width="1280" height="720"></canvas>
+    <div id="below">
+      <b>Sizzle &amp; Serve</b> — a 3-minute cooking rush. Move with <b>WASD / arrow keys</b>,
+      use a station with <b>E / Space</b>, or click a station to walk there.
+      Fridge &amp; pantry give ingredients, the board chops, the stove cooks (don’t burn it!),
+      the counter assembles, the window serves. No downloads, no network — everything is drawn and sounded in code.
+    </div>
+  </div>
+  <script>
+    // Screenshot staging (?shot=...) hides the footer so the frame is pure game.
+    if (new URLSearchParams(location.search).has('shot')) {
+      document.getElementById('below').style.display = 'none';
+    }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

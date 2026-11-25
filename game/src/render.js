@@ -253,6 +253,7 @@ function drawStations(g) {
       bar(ctx, bx - 26, by + 30, 52, 8, Math.min(1, bn.progress / CFG.BURNT_AT), col);
       if (bn.progress >= CFG.BURNT_AT) text(ctx, 'BURNT!', bx, by + 48, 11, COLORS.danger);
       else if (bn.progress >= CFG.COOKED_FROM) text(ctx, 'COOKED', bx, by + 48, 11, COLORS.ok);
+      else text(ctx, 'cooking…', bx, by + 48, 11, COLORS.textLight);
     } else {
       text(ctx, 'empty', bx, by, 11, '#8a8a96', 'center', 'normal');
     }
